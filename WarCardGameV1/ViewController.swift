@@ -21,11 +21,9 @@ class ViewController: UIViewController {
     var leftScore = 0
     var rightScore = 0
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-
     }
 
     @IBAction func dealTapped(_ sender: Any) {
@@ -37,7 +35,8 @@ class ViewController: UIViewController {
         leftImageView.image = UIImage(named: "card\(leftNumber)")
         rightImageView.image = UIImage(named: "card\(rightNumber)")
         
-        resultLabel.alpha = 1 //para volver a ver el texto del label
+        //make the text visible again, originally alpha=0
+        resultLabel.alpha = 1
         
         if(leftNumber > rightNumber) {
             //Left side wins
@@ -56,9 +55,9 @@ class ViewController: UIViewController {
         
         if((leftScore == 10) || (rightScore == 10)) {
             if (leftScore == 10) {
-                resultLabel.text = "Player won!"
+                resultLabel.text = "Player won! Tap Deal to play again"
             } else if (rightScore == 10) {
-                resultLabel.text = "CPU won!"
+                resultLabel.text = "CPU won! Tap Deal to play again"
             }
             //Restart results and scores
             leftScore = 0;
@@ -66,9 +65,7 @@ class ViewController: UIViewController {
             leftScoreLabel.text = String(leftScore)
             rightScoreLabel.text = String(rightScore)
         }
-        
-    
-        
+
     }
     
 
