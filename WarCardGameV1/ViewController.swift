@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func restartResultsScores() {
+    func restartResultsAndScores() {
         //Restart results and scores
         leftScore = 0;
         rightScore = 0;
@@ -61,14 +61,13 @@ class ViewController: UIViewController {
             resultLabel.text = "Tie!"
         }
         
-        if (leftScore == 10) {
+        if(leftScore == 10) {
             resultLabel.text = "Player won! Tap Deal to play again"
-            restartResultsScores()
+            restartResultsAndScores()
         } else if (rightScore == 10) {
             resultLabel.text = "CPU won! Tap Deal to play again"
-            restartResultsScores()
+            restartResultsAndScores()
         }
-        
 
     }
     
