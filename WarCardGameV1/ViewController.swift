@@ -25,7 +25,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
+    func restartResultsScores() {
+        //Restart results and scores
+        leftScore = 0;
+        rightScore = 0;
+        leftScoreLabel.text = String(leftScore)
+        rightScoreLabel.text = String(rightScore)
+    }
+    
     @IBAction func dealTapped(_ sender: Any) {
          
         //Randomize some numbers
@@ -53,18 +61,14 @@ class ViewController: UIViewController {
             resultLabel.text = "Tie!"
         }
         
-        if((leftScore == 10) || (rightScore == 10)) {
-            if (leftScore == 10) {
-                resultLabel.text = "Player won! Tap Deal to play again"
-            } else if (rightScore == 10) {
-                resultLabel.text = "CPU won! Tap Deal to play again"
-            }
-            //Restart results and scores
-            leftScore = 0;
-            rightScore = 0;
-            leftScoreLabel.text = String(leftScore)
-            rightScoreLabel.text = String(rightScore)
+        if (leftScore == 10) {
+            resultLabel.text = "Player won! Tap Deal to play again"
+            restartResultsScores()
+        } else if (rightScore == 10) {
+            resultLabel.text = "CPU won! Tap Deal to play again"
+            restartResultsScores()
         }
+        
 
     }
     
